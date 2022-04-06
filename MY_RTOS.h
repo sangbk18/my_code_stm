@@ -49,6 +49,7 @@ void initial_stack_handler_mode(uint32_t my_value_stack);
 void thread_mode_using_psp(void);
 void initial_stacks(void);
 void systick_config(void);
+void systick_config_1(void);
 /*===============================================================declare_fucntions====================================================================*/
 
 #endif
