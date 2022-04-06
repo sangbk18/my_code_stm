@@ -1,0 +1,120 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.33.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: embedded Admin, sml16, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.33.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.15
+Assembler:       Armasm.exe V6.15
+Linker/Locator:  ArmLink.exe V6.15
+Library Manager: ArmAr.exe V6.15
+Hex Converter:   FromElf.exe V6.15
+CPU DLL:         SARMCM3.DLL V5.33.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Admin\Desktop\IMPROVING_MY_PROJECT\RTOS\RTOS.uvprojx
+Project File Date:  03/29/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.15', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'RTOS_SANG'
+assembling my_assembly.s...
+compiling MY_RTOS.c...
+assembling startup_stm32f10x_md.s...
+My_application_stm32f1xx.c(1): warning: In file included from...
+./My_application_stm32f1xx.h(38): warning: padding struct 'struct _my_struct_pointer_dht11' with 3 bytes to align 'data_dht11' [-Wpadded]
+   volatile DATA_DHT11_Typedef *data_dht11;
+                                ^
+My_application_stm32f1xx.c(11): warning: cast from 'volatile struct _my_data_dht11 *' to 'struct _my_data_dht11 *' drops volatile qualifier [-Wcast-qual]
+        read_5_byte((TIM_TypeDef*)(((FUNC_DHT11_Typedef*)p)->time_dht11_used),(GPIO_TypeDef*)(((FUNC_DHT11_Typedef*)p)->gpio_dht11_used),(DHT11_PIN_Typedef)(((FUNC_DHT11_Typedef*)p)->pin_dht11_used),(DATA_DHT11_Typedef*)(((FUNC_DHT11_Typedef*)p)->data_dht11));
+                                                                                                                                                                                                                            ^
+My_application_stm32f1xx.c(1): warning: In file included from...
+./My_application_stm32f1xx.h(52): warning: padding struct 'struct my_menu' with 3 bytes to align 'p_tail' [-Wpadded]
+        volatile struct my_menu *p_tail;
+                                 ^
+My_application_stm32f1xx.c(150): warning: incompatible pointer types passing 'volatile uint32_t *' (aka 'volatile unsigned int *') to parameter of type 'volatile uint16_t *' (aka 'volatile unsigned short *') [-Wincompatible-pointer-types]
+                        FLash_read_half_word(adress_flash_start,(volatile uint32_t*)&data_thresold,2U);
+                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./my_diver_stm32f1xx.h(23): note: passing argument to parameter 'data' here
+void FLash_read_half_word(volatile uint32_t adress_start,volatile uint16_t * data,volatile uint32_t size);
+                                                                             ^
+4 warnings generated.
+compiling My_application_stm32f1xx.c...
+main.c(2): warning: In file included from...
+./My_application_stm32f1xx.h(52): warning: padding struct 'struct my_menu' with 3 bytes to align 'p_tail' [-Wpadded]
+        volatile struct my_menu *p_tail;
+                                 ^
+./My_application_stm32f1xx.h(38): warning: padding struct 'struct _my_struct_pointer_dht11' with 3 bytes to align 'data_dht11' [-Wpadded]
+   volatile DATA_DHT11_Typedef *data_dht11;
+                                ^
+main.c(55): warning: incompatible pointer types passing 'volatile uint32_t *' (aka 'volatile unsigned int *') to parameter of type 'volatile uint16_t *' (aka 'volatile unsigned short *') [-Wincompatible-pointer-types]
+           FLash_read_half_word(adress_flash_start,(volatile uint32_t*)&data_thresold,2U);
+                                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./my_diver_stm32f1xx.h(23): note: passing argument to parameter 'data' here
+void FLash_read_half_word(volatile uint32_t adress_start,volatile uint16_t * data,volatile uint32_t size);
+                                                                             ^
+main.c(232): warning: incompatible pointer types passing 'volatile uint32_t *' (aka 'volatile unsigned int *') to parameter of type 'volatile uint16_t *' (aka 'volatile unsigned short *') [-Wincompatible-pointer-types]
+                        FLash_read_half_word(adress_flash_start,(volatile uint32_t*)&data_thresold,2U);/*avoid overflow flash*/
+                                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./my_diver_stm32f1xx.h(23): note: passing argument to parameter 'data' here
+void FLash_read_half_word(volatile uint32_t adress_start,volatile uint16_t * data,volatile uint32_t size);
+                                                                             ^
+4 warnings generated.
+compiling main.c...
+compiling My_sensors_lib.c...
+my_driver_stm32f1xx.c(70): warning: cast from 'volatile uint16_t *' (aka 'volatile unsigned short *') to 'volatile uint32_t *' (aka 'volatile unsigned int *') increases required alignment from 2 to 4 [-Wcast-align]
+                *((volatile uint32_t*)data + dem) = *((volatile uint16_t*)adress_start + dem);
+                  ^~~~~~~~~~~~~~~~~~~~~~~~
+my_driver_stm32f1xx.c(123): warning: unused parameter 'value_stack_pointer' [-Wunused-parameter]
+void set_stack_pointer(uint32_t value_stack_pointer)
+                                ^
+2 warnings generated.
+compiling my_driver_stm32f1xx.c...
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=5078 RO-data=986 RW-data=768 ZI-data=1720  
+FromELF: creating hex file...
+".\Objects\RTOS.axf" - 0 Error(s), 10 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_RTOS_SANG
+  C:\Users\Admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\Admin\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
